@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chrome Wrapped</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #4285F4;
+    }
+
+    #loading-screen {
+      display: flex; /* Initially visible */
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background: #56c8d8;
+    }
+
+    #history-container {
+      display: none; /* Initially hidden */
+      padding: 20px;
+    }
+
+    .content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .paddle {
+      height: 40px;
+      width: 3px;
+      background-color: white;
+      position: relative;
+    }
+
+    .player_one {
+      height: 40px;
+      width: 3px;
+      background-color: white;
+      position: relative;
+      left: -180px;
+      animation: movePaddleOne 4s infinite;
+    }
+
+    .player_two {
+      height: 40px;
+      width: 3px;
+      background-color: white;
+      position: relative;
+      left: 20px;
+      animation: movePaddleTwo 4s infinite;
+    }
+
+    .ball {
+      position: relative;
+      height: 5px;
+      width: 5px;
+      border-radius: 50%;
+      background-color: white;
+      animation: moveBall 4s infinite linear;
+    }
+
+    .loading-text {
+      margin-top: 20px;
+      color: white;
+      font-size: 18px;
+      text-align: center;
+      padding-top: 40px;
+    }
+
+    @keyframes movePaddleOne {
+      0%, 100% {
+        transform: translate(0px, 100px);
+      }
+      25% {
+        transform: translate(0px, 0px);
+      }
+      50% {
+        transform: translate(0px, 0px);
+      }
+      75% {
+        transform: translate(0px, 100px);
+      }
+    }
+
+    @keyframes movePaddleTwo {
+      0%, 100% {
+        transform: translate(0px, -50px);
+      }
+      25% {
+        transform: translate(0px, 10px);
+      }
+      50% {
+        transform: translate(0px, 0px);
+      }
+      75% {
+        transform: translate(0px, 50px);
+      }
+    }
+
+    @keyframes moveBall {
+      0%, 100% {
+        transform: translate(-180px, 30px);
+      }
+      25% {
+        transform: translate(18px, -25px);
+      }
+      50% {
+        transform: translate(-180px, -55px);
+      }
+      75% {
+        transform: translate(18px, 15px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading screen -->
+  <div id="loading-screen">
+    <div class="content">
+      <div class="player_one"></div>
+      <div class="player_two"></div>
+      <div class="ball"></div>
+      <div class="loading-text" id="loading-text">
+        Loading your Chrome Wrapped...<br>
+        Please wait while we analyze your browsing history.
+      </div>
+    </div>
+  </div>
+
+  <!-- History container -->
+  <div id="history-container"></div>
+
+  <script>
+    const loadingTexts = [
+      "Loading your Chrome Wrapped...<br>Please wait while we analyze your browsing history.",
+      "Analyzing your browsing trends...<br>This may take a few moments.",
+      "Almost there...<br>We are preparing your personalized report.",
+      "Hang tight!<br>Your Chrome Wrapped is almost ready."
+    ];
+
+    let currentTextIndex = 0;
+
+    const changeLoadingText = () => {
+      const loadingTextElement = document.getElementById("loading-text");
+      loadingTextElement.innerHTML = loadingTexts[currentTextIndex];
+      currentTextIndex = (currentTextIndex + 1) % loadingTexts.length;
+    };
+
+    // Change text every 2 seconds
+    setInterval(changeLoadingText, 2000);
+
+    // Simulate loading complete (for demo purposes)
+    setTimeout(() => {
+      document.getElementById("loading-screen").style.display = "none";
+      document.getElementById("history-container").style.display = "block";
+    }, 1); // Adjust based on actual loading time
+  </script>
+
+  <script src="wrapped.js"></script>
+</body>
+</html>

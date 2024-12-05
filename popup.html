@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chrome Wrapped</title>
+  <style>
+    /* Body styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(to bottom, #4285F4, #EA4435);
+      color: white;
+      width: 300px; /* Extension width */
+      height: 400px; /* Extension height */
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    /* Ready message styling */
+    #ready-message {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px #202124;
+    }
+
+    /* Button styling */
+    #explore-button {
+      background: #01AC47;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    #explore-button:hover {
+      background: #4285F4;
+      transform: scale(1.1);
+    }
+
+    #explore-button:active {
+      transform: scale(0.95);
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div id="ready-message">Your Chrome Wrapped is ready!</div>
+  <button id="explore-button">Explore Now</button>
+  <script src="popup.js"></script>
+</body>
+</html>

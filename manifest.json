@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome History Fetcher",
+  "version": "1.0",
+  "description": "Fetches and displays Chrome browsing history.",
+  "permissions": [
+    "history"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "chrome.png"
+    }
+  }
+}
