@@ -37,7 +37,6 @@ Chrome Wrapped is a browser extension that delivers a personalized summary of yo
 <p align="center">
   <img src="https://github.com/Harsh23Kashyap/ChromeWrapper/blob/main/screenshot/4.png" width="300" alt="Trends">
   <img src="https://github.com/Harsh23Kashyap/ChromeWrapper/blob/main/screenshot/5.png" width="300" alt="Details">
-  <img src="https://github.com/Harsh23Kashyap/ChromeWrapper/blob/main/screenshot/6.png" width="300" alt="Analytics">
 </p>
 
 ---
