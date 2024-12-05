@@ -400,7 +400,7 @@ const canBeConvertedToStatement = async (topic) => {
     console.log(`Checking if the topic can be converted to a statement: "${topic}"`);
     const prompt = `Can the following topic be converted into a relevant statement or question: "${topic}"? Respond with 'Yes' or 'No'.`;
   
-    const apiKey = "AIzaSyB18rjganJojF2eAn5hzaRRz_Gy0E0VPA4";
+    const apiKey = "GEMINI_API_KEY";
     const response = await fetchHintsFromGemini(prompt, apiKey);
   
     const result = response.steps?.[0]?.toLowerCase() || "no"; // Default to 'No' if no response
@@ -414,7 +414,7 @@ const canBeConvertedToStatement = async (topic) => {
     console.log(`Generating a statement for the topic: "${topic}"`);
     const prompt = `Convert the following topic into a concise and relevant statement or question: "${topic}"`;
   
-    const apiKey = "AIzaSyB18rjganJojF2eAn5hzaRRz_Gy0E0VPA4";
+    const apiKey = "GEMINI_API_KEY";
     const response = await fetchHintsFromGemini(prompt, apiKey);
   
     const statement = response.steps?.[0] || "Unable to generate a statement.";
